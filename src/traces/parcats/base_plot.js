@@ -25,10 +25,10 @@ exports.plot = function(gd, traces, transitionOpts, makeOnCompleteCallback) {
 };
 
 exports.clean = function(newFullData, newFullLayout, oldFullData, oldFullLayout) {
-    var hadTable = (oldFullLayout._has && oldFullLayout._has('parcats'));
-    var hasTable = (newFullLayout._has && newFullLayout._has('parcats'));
+    var hadParcats = (oldFullLayout._has && oldFullLayout._has('parcats'));
+    var hasParcats = (newFullLayout._has && newFullLayout._has('parcats'));
 
-    if(hadTable && !hasTable) {
+    if(hadParcats && !hasParcats) {
         oldFullLayout._paperdiv.selectAll('.parcats').remove();
     }
 };
