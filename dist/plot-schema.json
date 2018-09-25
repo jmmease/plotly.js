@@ -1759,13 +1759,13 @@
                 "r": {
                     "valType": "data_array",
                     "editType": "calc",
-                    "description": "For legacy polar chart only.Please switch to *scatterpolar* trace type.Sets the radial coordinates.",
+                    "description": "r coordinates in scatter traces are deprecated!Please switch to the *scatterpolar* trace type.Sets the radial coordinatesfor legacy polar chart only.",
                     "role": "data"
                 },
                 "t": {
                     "valType": "data_array",
                     "editType": "calc",
-                    "description": "For legacy polar chart only.Please switch to *scatterpolar* trace type.Sets the angular coordinates.",
+                    "description": "t coordinates in scatter traces are deprecated!Please switch to the *scatterpolar* trace type.Sets the angular coordinatesfor legacy polar chart only.",
                     "role": "data"
                 },
                 "error_x": {
@@ -3283,13 +3283,13 @@
                 "r": {
                     "valType": "data_array",
                     "editType": "calc",
-                    "description": "For legacy polar chart only.Please switch to *scatterpolar* trace type.Sets the radial coordinates.",
+                    "description": "r coordinates in scatter traces are deprecated!Please switch to the *scatterpolar* trace type.Sets the radial coordinatesfor legacy polar chart only.",
                     "role": "data"
                 },
                 "t": {
                     "valType": "data_array",
                     "editType": "calc",
-                    "description": "For legacy polar chart only.Please switch to *scatterpolar* trace type.Sets the angular coordinates.",
+                    "description": "t coordinates in scatter traces are deprecated!Please switch to the *scatterpolar* trace type.Sets the angular coordinatesfor legacy polar chart only.",
                     "role": "data"
                 },
                 "_deprecated": {
@@ -27469,29 +27469,6 @@
                     "editType": "calc",
                     "description": "Determines whether or not this trace is visible. If *legendonly*, the trace is not drawn, but can appear as a legend item (provided that the legend itself is visible)."
                 },
-                "showlegend": {
-                    "valType": "boolean",
-                    "role": "info",
-                    "dflt": true,
-                    "editType": "style",
-                    "description": "Determines whether or not an item corresponding to this trace is shown in the legend."
-                },
-                "legendgroup": {
-                    "valType": "string",
-                    "role": "info",
-                    "dflt": "",
-                    "editType": "style",
-                    "description": "Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items."
-                },
-                "opacity": {
-                    "valType": "number",
-                    "role": "style",
-                    "min": 0,
-                    "max": 1,
-                    "dflt": 1,
-                    "editType": "style",
-                    "description": "Sets the opacity of the trace."
-                },
                 "name": {
                     "valType": "string",
                     "role": "info",
@@ -27502,24 +27479,6 @@
                     "valType": "string",
                     "role": "info",
                     "editType": "plot"
-                },
-                "ids": {
-                    "valType": "data_array",
-                    "editType": "calc",
-                    "description": "Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.",
-                    "role": "data"
-                },
-                "customdata": {
-                    "valType": "data_array",
-                    "editType": "calc",
-                    "description": "Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements",
-                    "role": "data"
-                },
-                "selectedpoints": {
-                    "valType": "any",
-                    "role": "info",
-                    "editType": "calc",
-                    "description": "Array containing integer indices of selected points. Has an effect only for traces that support selections. Note that an empty array means an empty selection where the `unselected` are turned on for all points, whereas, any other non-array values means no selection all where the `selected` and `unselected` styles have no effect."
                 },
                 "hoverinfo": {
                     "valType": "flaglist",
@@ -27540,95 +27499,6 @@
                     "dflt": "all",
                     "editType": "plot",
                     "description": "Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired."
-                },
-                "hoverlabel": {
-                    "bgcolor": {
-                        "valType": "color",
-                        "role": "style",
-                        "arrayOk": true,
-                        "editType": "none",
-                        "description": "Sets the background color of the hover labels for this trace"
-                    },
-                    "bordercolor": {
-                        "valType": "color",
-                        "role": "style",
-                        "arrayOk": true,
-                        "editType": "none",
-                        "description": "Sets the border color of the hover labels for this trace."
-                    },
-                    "font": {
-                        "family": {
-                            "valType": "string",
-                            "role": "style",
-                            "noBlank": true,
-                            "strict": true,
-                            "editType": "none",
-                            "description": "HTML font family - the typeface that will be applied by the web browser. The web browser will only be able to apply a font if it is available on the system which it operates. Provide multiple font families, separated by commas, to indicate the preference in which to apply fonts if they aren't available on the system. The plotly service (at https://plot.ly or on-premise) generates images on a server, where only a select number of fonts are installed and supported. These include *Arial*, *Balto*, *Courier New*, *Droid Sans*,, *Droid Serif*, *Droid Sans Mono*, *Gravitas One*, *Old Standard TT*, *Open Sans*, *Overpass*, *PT Sans Narrow*, *Raleway*, *Times New Roman*.",
-                            "arrayOk": true
-                        },
-                        "size": {
-                            "valType": "number",
-                            "role": "style",
-                            "min": 1,
-                            "editType": "none",
-                            "arrayOk": true
-                        },
-                        "color": {
-                            "valType": "color",
-                            "role": "style",
-                            "editType": "none",
-                            "arrayOk": true
-                        },
-                        "editType": "none",
-                        "description": "Sets the font used in hover labels.",
-                        "role": "object",
-                        "familysrc": {
-                            "valType": "string",
-                            "role": "info",
-                            "description": "Sets the source reference on plot.ly for  family .",
-                            "editType": "none"
-                        },
-                        "sizesrc": {
-                            "valType": "string",
-                            "role": "info",
-                            "description": "Sets the source reference on plot.ly for  size .",
-                            "editType": "none"
-                        },
-                        "colorsrc": {
-                            "valType": "string",
-                            "role": "info",
-                            "description": "Sets the source reference on plot.ly for  color .",
-                            "editType": "none"
-                        }
-                    },
-                    "namelength": {
-                        "valType": "integer",
-                        "min": -1,
-                        "arrayOk": true,
-                        "role": "style",
-                        "editType": "none",
-                        "description": "Sets the length (in number of characters) of the trace name in the hover labels for this trace. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis."
-                    },
-                    "editType": "calc",
-                    "role": "object",
-                    "bgcolorsrc": {
-                        "valType": "string",
-                        "role": "info",
-                        "description": "Sets the source reference on plot.ly for  bgcolor .",
-                        "editType": "none"
-                    },
-                    "bordercolorsrc": {
-                        "valType": "string",
-                        "role": "info",
-                        "description": "Sets the source reference on plot.ly for  bordercolor .",
-                        "editType": "none"
-                    },
-                    "namelengthsrc": {
-                        "valType": "string",
-                        "role": "info",
-                        "description": "Sets the source reference on plot.ly for  namelength .",
-                        "editType": "none"
-                    }
                 },
                 "stream": {
                     "token": {
@@ -28441,18 +28311,6 @@
                     "role": "info",
                     "editType": "calc",
                     "description": "The number of observations represented by each state. Defaults to 1 so that each state represents one observation"
-                },
-                "idssrc": {
-                    "valType": "string",
-                    "role": "info",
-                    "description": "Sets the source reference on plot.ly for  ids .",
-                    "editType": "none"
-                },
-                "customdatasrc": {
-                    "valType": "string",
-                    "role": "info",
-                    "description": "Sets the source reference on plot.ly for  customdata .",
-                    "editType": "none"
                 },
                 "hoverinfosrc": {
                     "valType": "string",
@@ -40080,13 +39938,13 @@
                 "r": {
                     "valType": "data_array",
                     "editType": "calc",
-                    "description": "For legacy polar chart only.Please switch to *scatterpolar* trace type.Sets the radial coordinates.",
+                    "description": "Area traces are deprecated! Please switch to the *barpolar* trace type. Sets the radial coordinates for legacy polar chart only.",
                     "role": "data"
                 },
                 "t": {
                     "valType": "data_array",
                     "editType": "calc",
-                    "description": "For legacy polar chart only.Please switch to *scatterpolar* trace type.Sets the angular coordinates.",
+                    "description": "Area traces are deprecated! Please switch to the *barpolar* trace type. Sets the angular coordinates for legacy polar chart only.",
                     "role": "data"
                 },
                 "marker": {
@@ -40095,7 +39953,7 @@
                         "arrayOk": true,
                         "role": "style",
                         "editType": "style",
-                        "description": "Sets themarkercolor. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.cmin` and `marker.cmax` if set."
+                        "description": "Area traces are deprecated! Please switch to the *barpolar* trace type. Sets themarkercolor. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.cmin` and `marker.cmax` if set."
                     },
                     "size": {
                         "valType": "number",
@@ -40104,7 +39962,7 @@
                         "arrayOk": true,
                         "role": "style",
                         "editType": "calc",
-                        "description": "Sets the marker size (in px)."
+                        "description": "Area traces are deprecated! Please switch to the *barpolar* trace type. Sets the marker size (in px)."
                     },
                     "symbol": {
                         "valType": "enumerated",
@@ -40398,7 +40256,7 @@
                         "arrayOk": true,
                         "role": "style",
                         "editType": "style",
-                        "description": "Sets the marker symbol type. Adding 100 is equivalent to appending *-open* to a symbol name. Adding 200 is equivalent to appending *-dot* to a symbol name. Adding 300 is equivalent to appending *-open-dot* or *dot-open* to a symbol name."
+                        "description": "Area traces are deprecated! Please switch to the *barpolar* trace type. Sets the marker symbol type. Adding 100 is equivalent to appending *-open* to a symbol name. Adding 200 is equivalent to appending *-dot* to a symbol name. Adding 300 is equivalent to appending *-open-dot* or *dot-open* to a symbol name."
                     },
                     "opacity": {
                         "valType": "number",
@@ -40407,7 +40265,7 @@
                         "arrayOk": true,
                         "role": "style",
                         "editType": "style",
-                        "description": "Sets the marker opacity."
+                        "description": "Area traces are deprecated! Please switch to the *barpolar* trace type. Sets the marker opacity."
                     },
                     "editType": "calc",
                     "role": "object",
@@ -48055,7 +47913,7 @@
                             "editType": "plot"
                         }
                     ],
-                    "description": "Defines the start and end point of this radial axis.",
+                    "description": "Legacy polar charts are deprecated! Please switch to *polar* subplots. Defines the start and end point of this radial axis.",
                     "editType": "plot"
                 },
                 "domain": {
@@ -48085,19 +47943,19 @@
                 "orientation": {
                     "valType": "number",
                     "role": "style",
-                    "description": "Sets the orientation (an angle with respect to the origin) of the radial axis.",
+                    "description": "Legacy polar charts are deprecated! Please switch to *polar* subplots. Sets the orientation (an angle with respect to the origin) of the radial axis.",
                     "editType": "plot"
                 },
                 "showline": {
                     "valType": "boolean",
                     "role": "style",
-                    "description": "Determines whether or not the line bounding this radial axis will be shown on the figure.",
+                    "description": "Legacy polar charts are deprecated! Please switch to *polar* subplots. Determines whether or not the line bounding this radial axis will be shown on the figure.",
                     "editType": "plot"
                 },
                 "showticklabels": {
                     "valType": "boolean",
                     "role": "style",
-                    "description": "Determines whether or not the radial axis ticks will feature tick labels.",
+                    "description": "Legacy polar charts are deprecated! Please switch to *polar* subplots. Determines whether or not the radial axis ticks will feature tick labels.",
                     "editType": "plot"
                 },
                 "tickorientation": {
@@ -48107,37 +47965,38 @@
                         "vertical"
                     ],
                     "role": "style",
-                    "description": "Sets the orientation (from the paper perspective) of the radial axis tick labels.",
+                    "description": "Legacy polar charts are deprecated! Please switch to *polar* subplots. Sets the orientation (from the paper perspective) of the radial axis tick labels.",
                     "editType": "plot"
                 },
                 "ticklen": {
                     "valType": "number",
                     "min": 0,
                     "role": "style",
-                    "description": "Sets the length of the tick lines on this radial axis.",
+                    "description": "Legacy polar charts are deprecated! Please switch to *polar* subplots. Sets the length of the tick lines on this radial axis.",
                     "editType": "plot"
                 },
                 "tickcolor": {
                     "valType": "color",
                     "role": "style",
-                    "description": "Sets the color of the tick lines on this radial axis.",
+                    "description": "Legacy polar charts are deprecated! Please switch to *polar* subplots. Sets the color of the tick lines on this radial axis.",
                     "editType": "plot"
                 },
                 "ticksuffix": {
                     "valType": "string",
                     "role": "style",
-                    "description": "Sets the length of the tick lines on this radial axis.",
+                    "description": "Legacy polar charts are deprecated! Please switch to *polar* subplots. Sets the length of the tick lines on this radial axis.",
                     "editType": "plot"
                 },
                 "endpadding": {
                     "valType": "number",
                     "role": "style",
+                    "description": "Legacy polar charts are deprecated! Please switch to *polar* subplots.",
                     "editType": "plot"
                 },
                 "visible": {
                     "valType": "boolean",
                     "role": "info",
-                    "description": "Determines whether or not this axis will be visible.",
+                    "description": "Legacy polar charts are deprecated! Please switch to *polar* subplots. Determines whether or not this axis will be visible.",
                     "editType": "plot"
                 },
                 "editType": "plot",
@@ -48159,7 +48018,7 @@
                             "editType": "plot"
                         }
                     ],
-                    "description": "Defines the start and end point of this angular axis.",
+                    "description": "Legacy polar charts are deprecated! Please switch to *polar* subplots. Defines the start and end point of this angular axis.",
                     "editType": "plot"
                 },
                 "domain": {
@@ -48189,13 +48048,13 @@
                 "showline": {
                     "valType": "boolean",
                     "role": "style",
-                    "description": "Determines whether or not the line bounding this angular axis will be shown on the figure.",
+                    "description": "Legacy polar charts are deprecated! Please switch to *polar* subplots. Determines whether or not the line bounding this angular axis will be shown on the figure.",
                     "editType": "plot"
                 },
                 "showticklabels": {
                     "valType": "boolean",
                     "role": "style",
-                    "description": "Determines whether or not the angular axis ticks will feature tick labels.",
+                    "description": "Legacy polar charts are deprecated! Please switch to *polar* subplots. Determines whether or not the angular axis ticks will feature tick labels.",
                     "editType": "plot"
                 },
                 "tickorientation": {
@@ -48205,37 +48064,38 @@
                         "vertical"
                     ],
                     "role": "style",
-                    "description": "Sets the orientation (from the paper perspective) of the angular axis tick labels.",
+                    "description": "Legacy polar charts are deprecated! Please switch to *polar* subplots. Sets the orientation (from the paper perspective) of the angular axis tick labels.",
                     "editType": "plot"
                 },
                 "ticklen": {
                     "valType": "number",
                     "min": 0,
                     "role": "style",
-                    "description": "Sets the length of the tick lines on this angular axis.",
+                    "description": "Legacy polar charts are deprecated! Please switch to *polar* subplots. Sets the length of the tick lines on this angular axis.",
                     "editType": "plot"
                 },
                 "tickcolor": {
                     "valType": "color",
                     "role": "style",
-                    "description": "Sets the color of the tick lines on this angular axis.",
+                    "description": "Legacy polar charts are deprecated! Please switch to *polar* subplots. Sets the color of the tick lines on this angular axis.",
                     "editType": "plot"
                 },
                 "ticksuffix": {
                     "valType": "string",
                     "role": "style",
-                    "description": "Sets the length of the tick lines on this angular axis.",
+                    "description": "Legacy polar charts are deprecated! Please switch to *polar* subplots. Sets the length of the tick lines on this angular axis.",
                     "editType": "plot"
                 },
                 "endpadding": {
                     "valType": "number",
                     "role": "style",
+                    "description": "Legacy polar charts are deprecated! Please switch to *polar* subplots.",
                     "editType": "plot"
                 },
                 "visible": {
                     "valType": "boolean",
                     "role": "info",
-                    "description": "Determines whether or not this axis will be visible.",
+                    "description": "Legacy polar charts are deprecated! Please switch to *polar* subplots. Determines whether or not this axis will be visible.",
                     "editType": "plot"
                 },
                 "editType": "plot",
@@ -48248,13 +48108,13 @@
                     "counterclockwise"
                 ],
                 "role": "info",
-                "description": "For polar plots only. Sets the direction corresponding to positive angles.",
+                "description": "Legacy polar charts are deprecated! Please switch to *polar* subplots. Sets the direction corresponding to positive angles in legacy polar charts.",
                 "editType": "plot"
             },
             "orientation": {
                 "valType": "angle",
                 "role": "info",
-                "description": "For polar plots only. Rotates the entire polar by the given angle.",
+                "description": "Legacy polar charts are deprecated! Please switch to *polar* subplots. Rotates the entire polar by the given angle in legacy polar charts.",
                 "editType": "plot"
             },
             "editType": "plot",

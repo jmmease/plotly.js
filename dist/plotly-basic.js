@@ -25873,7 +25873,8 @@ module.exports = function getLegendData(calcdata, opts) {
                         label: labelj,
                         color: cd[j].color,
                         i: cd[j].i,
-                        trace: trace
+                        trace: trace,
+                        pts: cd[j].pts
                     });
 
                     slicesShown[lgroup][labelj] = true;
@@ -46685,16 +46686,23 @@ function crawl(objIn, objOut, schema, list, base, path) {
 
 // the 'full' layout schema depends on the traces types presents
 function fillLayoutSchema(schema, dataOut) {
+    var layoutSchema = schema.layout.layoutAttributes;
+
     for(var i = 0; i < dataOut.length; i++) {
-        var traceType = dataOut[i].type,
-            traceLayoutAttr = schema.traces[traceType].layoutAttributes;
+        var traceOut = dataOut[i];
+        var traceSchema = schema.traces[traceOut.type];
+        var traceLayoutAttr = traceSchema.layoutAttributes;
 
         if(traceLayoutAttr) {
-            Lib.extendFlat(schema.layout.layoutAttributes, traceLayoutAttr);
+            if(traceOut.subplot) {
+                Lib.extendFlat(layoutSchema[traceSchema.attributes.subplot.dflt], traceLayoutAttr);
+            } else {
+                Lib.extendFlat(layoutSchema, traceLayoutAttr);
+            }
         }
     }
 
-    return schema.layout.layoutAttributes;
+    return layoutSchema;
 }
 
 // validation error codes
@@ -59726,20 +59734,38 @@ plots.generalUpdatePerTraceModule = function(gd, subplot, subplotCalcData, subpl
 
 var scatterAttrs = _dereq_('../../../traces/scatter/attributes');
 var scatterMarkerAttrs = scatterAttrs.marker;
+var extendFlat = _dereq_('../../../lib/extend').extendFlat;
+
+var deprecationWarning = [
+    'Area traces are deprecated!',
+    'Please switch to the *barpolar* trace type.'
+].join(' ');
 
 module.exports = {
-    r: scatterAttrs.r,
-    t: scatterAttrs.t,
+    r: extendFlat({}, scatterAttrs.r, {
+        
+    }),
+    t: extendFlat({}, scatterAttrs.t, {
+        
+    }),
     marker: {
-        color: scatterMarkerAttrs.color,
-        size: scatterMarkerAttrs.size,
-        symbol: scatterMarkerAttrs.symbol,
-        opacity: scatterMarkerAttrs.opacity,
+        color: extendFlat({}, scatterMarkerAttrs.color, {
+            
+        }),
+        size: extendFlat({}, scatterMarkerAttrs.size, {
+            
+        }),
+        symbol: extendFlat({}, scatterMarkerAttrs.symbol, {
+            
+        }),
+        opacity: extendFlat({}, scatterMarkerAttrs.opacity, {
+            
+        }),
         editType: 'calc'
     }
 };
 
-},{"../../../traces/scatter/attributes":281}],239:[function(_dereq_,module,exports){
+},{"../../../lib/extend":154,"../../../traces/scatter/attributes":281}],239:[function(_dereq_,module,exports){
 /**
 * Copyright 2012-2018, Plotly, Inc.
 * All rights reserved.
@@ -59754,6 +59780,11 @@ module.exports = {
 var axesAttrs = _dereq_('../../cartesian/layout_attributes');
 var extendFlat = _dereq_('../../../lib/extend').extendFlat;
 var overrideAll = _dereq_('../../../plot_api/edit_types').overrideAll;
+
+var deprecationWarning = [
+    'Legacy polar charts are deprecated!',
+    'Please switch to *polar* subplots.'
+].join(' ');
 
 var domainAttr = extendFlat({}, axesAttrs.domain, {
     
@@ -59796,6 +59827,7 @@ function mergeAttrs(axisName, nonCommonAttrs) {
         endpadding: {
             valType: 'number',
             
+            description: deprecationWarning,
         },
         visible: {
             valType: 'boolean',

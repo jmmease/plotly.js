@@ -75,7 +75,7 @@ The main plotly.js bundle weights in at:
 
 | plotly.js | plotly.min.js | plotly.min.js + gzip | plotly-with-meta.js |
 |-----------|---------------|----------------------|---------------------|
-| 5.9 MB | 2.7 MB | 826.4 kB | 6.1 MB |
+| 5.9 MB | 2.7 MB | 826.6 kB | 6.1 MB |
 
 ## Partial bundles
 
@@ -98,7 +98,7 @@ The `basic` partial bundle contains trace modules `scatter`, `bar` and `pie`.
 
 | Raw size | Minified size | Minified + gzip size |
 |------|-----------------|------------------------|
-| 2.2 MB | 775.6 kB | 254 kB |
+| 2.2 MB | 775.9 kB | 254.1 kB |
 
 #### CDN links
 
@@ -144,7 +144,7 @@ The `cartesian` partial bundle contains trace modules `scatter`, `bar`, `box`, `
 
 | Raw size | Minified size | Minified + gzip size |
 |------|-----------------|------------------------|
-| 2.5 MB | 885.9 kB | 288.7 kB |
+| 2.5 MB | 886.3 kB | 288.8 kB |
 
 #### CDN links
 
@@ -190,7 +190,7 @@ The `geo` partial bundle contains trace modules `scatter`, `scattergeo` and `cho
 
 | Raw size | Minified size | Minified + gzip size |
 |------|-----------------|------------------------|
-| 2.2 MB | 798.7 kB | 263.1 kB |
+| 2.2 MB | 799 kB | 263.2 kB |
 
 #### CDN links
 
@@ -236,7 +236,7 @@ The `gl3d` partial bundle contains trace modules `scatter`, `scatter3d`, `surfac
 
 | Raw size | Minified size | Minified + gzip size |
 |------|-----------------|------------------------|
-| 3.2 MB | 1.3 MB | 411.3 kB |
+| 3.2 MB | 1.3 MB | 411.4 kB |
 
 #### CDN links
 
@@ -282,7 +282,7 @@ The `gl2d` partial bundle contains trace modules `scatter`, `scattergl`, `splom`
 
 | Raw size | Minified size | Minified + gzip size |
 |------|-----------------|------------------------|
-| 3.3 MB | 1.3 MB | 431.2 kB |
+| 3.3 MB | 1.3 MB | 431.4 kB |
 
 #### CDN links
 
@@ -328,7 +328,7 @@ The `mapbox` partial bundle contains trace modules `scatter` and `scattermapbox`
 
 | Raw size | Minified size | Minified + gzip size |
 |------|-----------------|------------------------|
-| 2.7 MB | 1.3 MB | 400.8 kB |
+| 2.7 MB | 1.3 MB | 401 kB |
 
 #### CDN links
 
@@ -374,7 +374,7 @@ The `finance` partial bundle contains trace modules `scatter`, `bar`, `histogram
 
 | Raw size | Minified size | Minified + gzip size |
 |------|-----------------|------------------------|
-| 2.3 MB | 805.7 kB | 262.9 kB |
+| 2.3 MB | 806 kB | 263 kB |
 
 #### CDN links
 
